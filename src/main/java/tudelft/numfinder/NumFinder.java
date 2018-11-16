@@ -4,12 +4,15 @@ public class NumFinder {
     private int smallest = Integer.MAX_VALUE;
     private int largest = Integer.MIN_VALUE;
 
+
     public void find(int[] nums) {
         for(int n : nums) {
 
             if(n < smallest)
                 smallest = n;
-            else if (n > largest)
+
+            // "else if" doesn't work correctly
+            if (n > largest)
                 largest = n;
 
         }
@@ -22,4 +25,5 @@ public class NumFinder {
     public int getLargest () {
         return largest;
     }
+
 }
